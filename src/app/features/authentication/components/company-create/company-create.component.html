@@ -1,0 +1,147 @@
+<section class="create-company-container">
+  <div class="create-company-form">
+    <div class="form-header">
+      <h1>{{ 'company.createTitle' | translate }}</h1>
+      <p>{{ 'company.createSubtitle' | translate }}</p>
+    </div>
+
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-field">
+        <label for="company-name">{{ 'company.nameLabel' | translate }} <span class="required">*</span></label>
+        <input id="company-name" name="company-name" [(ngModel)]="companyName" (input)="generateSlug()" type="text" placeholder="{{ 'company.namePlaceholder' | translate }}" required>
+      </div>
+
+      <div class="form-field">
+        <label for="company-slug">{{ 'company.slugLabel' | translate }}</label>
+        <div class="slug-input">
+          <span class="slug-prefix">echoknowledge.com/company/</span>
+          <input id="company-slug" name="company-slug" [(ngModel)]="companySlug" type="text" placeholder="{{ 'company.slugPlaceholder' | translate }}">
+        </div>
+        <p class="slug-preview">{{ 'company.slugPreview' | translate }} <span>{{ companySlug || 'company-identifier' }}</span></p>
+      </div>
+
+      <div class="form-field logo-upload">
+        <label>{{ 'company.logoLabel' | translate }}</label>
+        <div class="upload-container">
+          <div id="logo-preview" class="logo-preview">
+            @if (logoDataUrl) {
+              <img [src]="logoDataUrl" class="logo-img" alt="Company Logo" />
+            } @else {
+                <i class="fa-solid fa-building"></i>
+            }
+          </div>
+          <div class="upload-button-wrapper">
+            <label for="logo-upload" class="upload-label">
+              <i class="fa-solid fa-cloud-arrow-up"></i> {{ 'company.uploadLogo' | translate }}
+            </label>
+            <input id="logo-upload" type="file" accept="image/*" (change)="handleLogoUpload($event)">
+            <p class="file-hint">{{ 'company.logoHint' | translate }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-field plan-selection">
+        <label>{{ 'company.planLabel' | translate }}</label>
+        <div class="plan-container">
+
+          <!-- Free Plan -->
+          <div class="plan-card" data-plan="free">
+            <div class="plan-header">
+              <div class="plan-icon green">
+                <i class="fa-solid fa-seedling"></i>
+              </div>
+              <div class="plan-info">
+                <h3>{{ 'company.planFreeTitle' | translate }}</h3>
+                <p>{{ 'company.planFreeDesc' | translate }}</p>
+              </div>
+              <div class="plan-price">
+                <div>$0</div>
+                <div>{{ 'company.perMonth' | translate }}</div>
+              </div>
+            </div>
+            <div class="plan-features">
+              <div><i class="fa-solid fa-check"></i> {{ 'company.planFreeFeature1' | translate }}</div>
+              <div><i class="fa-solid fa-check"></i> {{ 'company.planFreeFeature2' | translate }}</div>
+              <div><i class="fa-solid fa-check"></i> {{ 'company.planFreeFeature3' | translate }}</div>
+              <div><i class="fa-solid fa-check"></i> {{ 'company.planFreeFeature4' | translate }}</div>
+            </div>
+          </div>
+
+          <!-- Pro Plan -->
+          <div class="plan-card popular" data-plan="pro">
+            <span class="badge">{{ 'company.popularBadge' | translate }}</span>
+            <div class="plan-header">
+              <div class="plan-icon blue">
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div class="plan-info">
+                <h3>{{ 'company.planProTitle' | translate }}</h3>
+                <p>{{ 'company.planProDesc' | translate }}</p>
+              </div>
+              <div class="plan-price">
+                <div>$29</div>
+                <div>{{ 'company.perMonth' | translate }}</div>
+              </div>
+            </div>
+            <div class="plan-features">
+              <div><i class="fa-solid fa-check"></i> {{ 'company.planProFeature1' | translate }}</div>
+              <div><i class="fa-solid fa-check"></i> {{ 'company.planProFeature2' | translate }}</div>
+              <div><i class="fa-solid fa-check"></i> {{ 'company.planProFeature3' | translate }}</div>
+              <div><i class="fa-solid fa-check"></i> {{ 'company.planProFeature4' | translate }}</div>
+            </div>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div class="plan-card" data-plan="enterprise">
+            <div class="plan-header">
+              <div class="plan-icon purple">
+                <i class="fa-solid fa-building"></i>
+              </div>
+              <div class="plan-info">
+                <h3>{{ 'company.planEnterpriseTitle' | translate }}</h3>
+                <p>{{ 'company.planEnterpriseDesc' | translate }}</p>
+              </div>
+              <div class="plan-price">
+                <div>{{ 'company.planEnterprisePrice' | translate }}</div>
+                <div>{{ 'company.pricing' | translate }}</div>
+              </div>
+            </div>
+            <div class="plan-features">
+              <div><i class="fa-solid fa-check"></i> {{ 'company.planEnterpriseFeature1' | translate }}</div>
+              <div><i class="fa-solid fa-check"></i> {{ 'company.planEnterpriseFeature2' | translate }}</div>
+              <div><i class="fa-solid fa-check"></i> {{ 'company.planEnterpriseFeature3' | translate }}</div>
+              <div><i class="fa-solid fa-check"></i> {{ 'company.planEnterpriseFeature4' | translate }}</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="actions">
+        <button type="button" class="action-btn">← {{ 'company.backBtn' | translate }}</button>
+        <button type="submit" class="select-btn" [disabled]="!companyName">{{ 'company.createBtn' | translate }}</button>
+      </div>
+    </form>
+  </div>
+</section>
+<section class="features-preview">
+  <div class="heading">
+    <h2>{{ 'company.featuresHeader' | translate }}</h2>
+  </div>
+  <div class="grid">
+    <div class="feature-box">
+      <div class="icon-container">🌐</div>
+      <h3>{{ 'company.featureWebsiteTitle' | translate }}</h3>
+      <p>{{ 'company.featureWebsiteDesc' | translate }}</p>
+    </div>
+    <div class="feature-box">
+      <div class="icon-container">📄</div>
+      <h3>{{ 'company.featureFileTitle' | translate }}</h3>
+      <p>{{ 'company.featureFileDesc' | translate }}</p>
+    </div>
+    <div class="feature-box">
+      <div class="icon-container">🤖</div>
+      <h3>{{ 'company.featureFormsTitle' | translate }}</h3>
+      <p>{{ 'company.featureFormsDesc' | translate }}</p>
+    </div>
+  </div>
+</section>

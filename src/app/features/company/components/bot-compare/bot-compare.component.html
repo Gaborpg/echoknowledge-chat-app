@@ -1,0 +1,105 @@
+<main class="main">
+  <!-- Left Config Panel -->
+  <section class="config-panel">
+    <div class="section">
+      <h2>Bot Identity</h2>
+      <div class="form-group">
+        <div class="avatar">🤖<button class="edit-avatar">✏️</button></div>
+        <input type="text" value="Echo Assistant" placeholder="Bot Name">
+      </div>
+      <textarea placeholder="Bot Description">An AI assistant that helps answer questions and provide information.</textarea>
+    </div>
+
+    <div class="section">
+      <h2>Initial Greeting</h2>
+      <textarea rows="3">Hi there! I'm Echo, your AI assistant. How can I help you today?</textarea>
+    </div>
+
+    <div class="section">
+      <h2>Theme & Appearance</h2>
+      <div class="row">
+        <button class="theme-btn">☀️ Light</button>
+        <button class="theme-btn dark">🌙 Dark</button>
+      </div>
+      <select>
+        <option>Blue</option>
+      </select>
+      <div class="swatches">
+        <span style="background:#3b82f6"></span>
+        <span style="background:#8b5cf6"></span>
+        <span style="background:#10b981"></span>
+        <span style="background:#ef4444"></span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Chat Interface</h2>
+      <input type="text" placeholder="Input Placeholder" value="Ask me anything...">
+      <input type="text" placeholder="Footer Text" value="Powered by Echo AI">
+      <label><input type="checkbox" checked> Show Typing Indicator</label>
+      <label><input type="checkbox"> Collect Feedback</label>
+    </div>
+
+    <div class="section">
+      <h2>AI Models</h2>
+      <label><input type="radio" name="model" checked> Echo GPT 4.0 (Default)</label>
+      <label><input type="radio" name="model"> Echo GPT 3.5 (Faster)</label>
+      <label><input type="radio" name="model"> Echo UX Pilot (Beta)</label>
+    </div>
+  </section>
+
+  <!-- Right Preview Panel -->
+  <section class="preview-panel">
+    <div class="preview-header">
+      <h2>Preview</h2>
+      <div class="preview-actions">
+        <button>🔄 Reset</button>
+        <button>📋 Duplicate</button>
+        <select>
+          <option>Compare Models</option>
+        </select>
+      </div>
+    </div>
+    <div class="preview-columns">
+      <!-- Chat 1 -->
+      <div class="chat light">
+        <div class="chat-header">🤖 Echo GPT 4.0 <span class="label">Default</span></div>
+        <div class="chat-body">
+          <div class="bot">Hi there! I'm Echo, your AI assistant. How can I help you today?</div>
+          <div class="user">Can you tell me about the features of Echo AI Platform?</div>
+          <div class="bot">
+            Echo AI Platform offers:
+            <ul>
+              <li>Human-like NLP</li>
+              <li>Multi-model comparison</li>
+              <li>Custom chat UI</li>
+              <li>Analytics dashboard</li>
+              <li>Platform integration</li>
+            </ul>
+          </div>
+        </div>
+        <div class="chat-footer">Ask me anything... ▶️</div>
+      </div>
+
+      <!-- Chat 2 -->
+      <div class="chat dark">
+        <div class="chat-header">🤖 Echo UX Pilot <span class="label">Beta</span></div>
+        <div class="chat-body">
+          <div class="bot">Hi there! I'm Echo, your AI assistant. How can I help you today?</div>
+          <div class="user">Can you tell me about the features of Echo AI Platform?</div>
+          <div class="bot">
+            The Echo AI Platform provides:
+            <ul>
+              <li>Context-aware responses</li>
+              <li>Side-by-side testing</li>
+              <li>Custom UI options</li>
+              <li>Analytics</li>
+              <li>API Integration</li>
+            </ul>
+          </div>
+        </div>
+        <div class="chat-footer">Ask me anything... ▶️</div>
+      </div>
+    </div>
+  </section>
+</main>

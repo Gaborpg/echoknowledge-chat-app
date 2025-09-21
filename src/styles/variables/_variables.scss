@@ -1,0 +1,71 @@
+﻿@use 'sass:color';
+
+// =====================
+// BRAND COLORS via CSS vars
+// =====================
+
+$primary-color: var(--primary-color);
+$primary-hover: var(--primary-hover);
+$primary-active: var(--primary-hover); // fallback for active
+$btn-text-color: #ffffff;
+
+// =====================
+// NEUTRALS via CSS vars
+// =====================
+
+$white: #ffffff;
+$black: #000000;
+
+$light-text: var(--text-color);
+$dark-text: var(--text-color);
+$input-border: var(--input-border);
+$divider-color: var(--divider-color);
+$hover-bg-light: var(--hover-bg-light);
+$google-btn-bg: $white;
+$google-btn-border: var(--input-border);
+
+// =====================
+// FONT SIZES
+// =====================
+
+$font-xs: 1rem;     // 10px
+$font-sm: 1.2rem;   // 12px
+$font-md: 1.4rem;   // 14px
+$font-lg: 1.6rem;   // 16px
+$font-xl: 2rem;     // 20px
+$font-xxl: 2.4rem;  // 24px
+
+// =====================
+// FONT WEIGHTS
+// =====================
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 600;
+
+// =====================
+// BUTTONS
+// =====================
+
+$btn-padding: 1.2rem;
+$btn-font-size: $font-md;
+$btn-font-weight: $font-weight-bold;
+$btn-radius: 0.8rem;
+
+// =====================
+// BORDER RADIUS
+// =====================
+
+$rounded-sm: 0.4rem;
+$rounded: 0.8rem;
+$rounded-lg: 1.6rem;
+
+// =====================
+// SPACING
+// =====================
+
+$spacing-xs: 0.4rem;
+$spacing-sm: 0.8rem;
+$spacing-md: 1.6rem;
+$spacing-lg: 2.4rem;
+$spacing-xl: 4rem;

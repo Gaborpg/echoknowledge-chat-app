@@ -27,11 +27,19 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
-            ]
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./src/styles/mixings",
+                "./src/styles/variables",
+                "./src/styles/components"
+              ]
+            }
           },
           "configurations": {
             "production": {

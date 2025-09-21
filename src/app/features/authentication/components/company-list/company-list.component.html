@@ -1,0 +1,44 @@
+<div class="main-content">
+  <div class="welcome">
+    <h1>{{ 'company.selectTitle' | translate }}</h1>
+    <p>{{ 'company.selectSubtitle' | translate }}</p>
+  </div>
+
+  <div class="company-list">
+    <ng-container *ngIf="(companies?.length ?? 0) > 0; else noCompanies">
+      <div class="card" *ngFor="let company of companies">
+        <div class="info">
+          <div class="logo" [ngClass]="company.tierColor">
+            {{ company.initials }}
+          </div>
+          <div>
+            <h3>{{ company.name }}</h3>
+            <div class="meta">
+              <span>{{ 'company.created' | translate }}: {{ company.created }}</span>
+              <span class="badge" [ngClass]="company.tierColor">{{ company.tier }}</span>
+            </div>
+          </div>
+        </div>
+        <button class="select-btn">{{ 'company.selectBtn' | translate }}</button>
+      </div>
+    </ng-container>
+
+    <ng-template #noCompanies>
+      <div class="empty">
+        <div class="icon-circle">
+          <span class="fa fa-building"></span>
+        </div>
+        <h3>{{ 'company.noCompanyTitle' | translate }}</h3>
+        <p>{{ 'company.noCompanySubtitle' | translate }}</p>
+      </div>
+    </ng-template>
+  </div>
+
+  <div class="cta">
+    <button class="action-btn" [routerLink]="['/auth/register-company']">{{ 'company.createBtn' | translate }}</button>
+  </div>
+</div>
+
+<div class="footer">
+  <p>© 2025 Echo Knowledge. {{ 'company.rights' | translate }}</p>
+</div>

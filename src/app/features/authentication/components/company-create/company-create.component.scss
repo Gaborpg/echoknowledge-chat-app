@@ -1,0 +1,335 @@
+@use "variables" as *;
+
+// === Feature Preview Section ===
+.features-preview {
+  max-width: 80rem;
+  margin: $spacing-lg auto $spacing-xl;
+  padding: 0 $spacing-md;
+
+  h2 {
+    text-align: center;
+    font-size: $font-xl;
+    font-weight: $font-weight-medium;
+    color: #374151;
+    margin-bottom: $spacing-xl;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr; // Mobile first
+    gap: $spacing-lg;
+
+    .feature-box {
+      background: $white;
+      padding: $spacing-lg;
+      border-radius: $rounded-lg;
+      box-shadow: 0 1px 3px rgba($black, 0.05);
+      border: 1px solid $divider-color;
+
+      .icon-container {
+        width: 3rem;
+        height: 3rem;
+        background: var(--echo-light);
+        border-radius: $rounded;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: $spacing-md;
+
+        i {
+          font-size: $font-md;
+          color: var(--echo-primary);
+        }
+      }
+
+      h3 {
+        font-weight: $font-weight-medium;
+        font-size: $font-lg;
+        margin-bottom: $spacing-sm;
+      }
+
+      p {
+        color: #4b5563;
+        font-size: $font-sm;
+      }
+    }
+  }
+
+  @media (min-width: 640px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.create-company-container {
+  max-width: 90rem;
+  margin: $spacing-xl auto;
+  padding: 0 $spacing-md;
+}
+
+.create-company-form {
+  background: $white;
+  border: 1px solid #f3f4f6;
+  border-radius: $rounded;
+  padding: $spacing-lg;
+  box-shadow: 0 1px 3px rgba($black, 0.05);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+
+  h1 {
+    font-size: $font-xxl;
+    font-weight: $font-weight-bold;
+    color: #1f2937;
+  }
+
+  p {
+    color: #6b7280;
+    margin-top: $spacing-sm;
+  }
+}
+
+.form-field {
+  margin-bottom: $spacing-xl;
+
+  label {
+    display: block;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-sm;
+    color: #374151;
+
+    .required {
+      color: #ef4444;
+    }
+  }
+
+  input[type='text'],
+  select {
+    width: 100%;
+    padding: $spacing-sm $spacing-md;
+    border: 1px solid $input-border;
+    border-radius: $rounded-sm;
+    outline: none;
+
+    &:focus {
+      border-color: $primary-color;
+      box-shadow: 0 0 0 2px rgba($primary-color, 0.3);
+    }
+  }
+}
+
+.slug-input {
+  display: flex;
+
+  .slug-prefix {
+    padding: $spacing-sm $spacing-md;
+    background: #f3f4f6;
+    color: #6b7280;
+    border: 1px solid $input-border;
+    border-right: none;
+    border-radius: $rounded-sm 0 0 $rounded-sm;
+  }
+
+  input {
+    border-radius: 0 $rounded-sm $rounded-sm 0;
+  }
+}
+
+.slug-preview {
+  font-size: $font-sm;
+  color: #6b7280;
+  margin-top: $spacing-xs;
+
+  span {
+    font-weight: $font-weight-bold;
+  }
+}
+
+#logo-upload {
+  display: none;
+}
+
+.logo-upload {
+  .upload-container {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+  }
+
+  .logo-preview {
+    width: 6.4rem;
+    height: 6.4rem;
+    border: 2px dashed $input-border;
+    border-radius: $rounded;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f9fafb;
+    color: #9ca3af;
+    font-size: $font-md;
+
+    & img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain; /* or "cover" if you want it cropped */
+    }
+  }
+
+  .upload-label {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-sm;
+    font-size: $font-sm;
+    background: $white;
+    border: 1px solid $input-border;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $rounded-sm;
+    cursor: pointer;
+
+    &:hover {
+      background: $hover-bg-light;
+    }
+  }
+
+  .file-hint {
+    font-size: $font-xs;
+    color: #6b7280;
+    margin-top: $spacing-xs;
+  }
+}
+
+.plan-selection {
+  .plan-container {
+    display: grid;
+    gap: $spacing-lg;
+  }
+
+  .plan-card {
+    border: 1px solid $input-border;
+    border-radius: $rounded;
+    padding: $spacing-lg;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    &:hover {
+      border-color: $primary-color;
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+    }
+
+    &.popular {
+      border: 2px solid $primary-color;
+      background: rgba(239, 240, 255, 0.5);
+      position: relative;
+
+      .badge {
+        position: absolute;
+        top: -0.5rem;
+        right: -0.5rem;
+        background: $primary-color;
+        color: $white;
+        font-size: $font-xs;
+        font-weight: $font-weight-bold;
+        padding: $spacing-xs $spacing-md;
+        border-radius: $rounded-lg;
+      }
+    }
+  }
+
+  .plan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-md;
+
+    .plan-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: $rounded;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: $font-md;
+      color: $white;
+
+      &.green {
+        background: #d1fae5;
+        color: #047857;
+      }
+
+      &.blue {
+        background: #e0e7ff;
+        color: $primary-color;
+      }
+
+      &.purple {
+        background: #ede9fe;
+        color: #7c3aed;
+      }
+    }
+
+    .plan-info h3 {
+      font-size: $font-lg;
+      font-weight: $font-weight-bold;
+    }
+
+    .plan-info p {
+      font-size: $font-sm;
+      color: #6b7280;
+    }
+
+    .plan-price div:first-child {
+      font-size: $font-xl;
+      font-weight: $font-weight-bold;
+    }
+
+    .plan-price div:last-child {
+      font-size: $font-sm;
+      color: #6b7280;
+    }
+  }
+
+  .plan-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-sm;
+    font-size: $font-sm;
+    color: #4b5563;
+
+    div {
+      display: flex;
+      align-items: center;
+
+      i {
+        margin-right: $spacing-sm;
+        color: inherit;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .form-header h1 {
+    font-size: $font-xl;
+  }
+
+  .plan-selection .plan-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: $spacing-xl;
+}

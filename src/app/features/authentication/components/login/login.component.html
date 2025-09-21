@@ -1,0 +1,28 @@
+<div class="login-form">
+  <form (ngSubmit)="login()">
+    <label for="email">{{ 'login.emailLabel' | translate }}</label>
+    <input type="email" id="email" [placeholder]="'login.emailPlaceholder' | translate" />
+
+    <label for="password">{{ 'login.passwordLabel' | translate }}</label>
+    <div class="password-wrapper">
+      <input type="password" id="password" [placeholder]="'login.passwordPlaceholder' | translate" />
+      <button type="button" class="toggle-password">
+        <i class="fa-regular fa-eye"></i>
+      </button>
+    </div>
+
+    <div class="forgot-password">
+      <a href="#">{{ 'login.forgotPassword' | translate }}</a>
+    </div>
+
+    <button type="submit" class="login-btn">{{ 'login.loginBtn' | translate }}</button>
+
+    <div class="divider"><span>{{ 'login.or' | translate }}</span></div>
+
+    <button class="action-btn"> <i class="fa-brands fa-google"></i> {{ 'login.googleBtn' | translate }}</button>
+
+    <p class="bottom-text">
+      {{ 'login.noAccount' | translate }} <a href="#">{{ 'login.signUp' | translate }}</a>
+    </p>
+  </form>
+</div>

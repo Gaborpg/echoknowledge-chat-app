@@ -1,0 +1,73 @@
+<select #langSelect (change)="switchLanguage(langSelect.value)">
+  <option value="en">English</option>
+  <option value="hu">Magyar</option>
+  <option value="es">Español</option>
+</select>
+<div class="auth-container">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <svg width="302" height="188" viewBox="0 0 302 188" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="71.5" cy="70.5" r="12.5" fill="#152E46"/>
+        <circle cx="146.5" cy="70.5" r="12.5" fill="#152E46"/>
+        <path d="M146 0C183.003 0 213 29.9969 213 67V106C213 143.003 183.003 173 146 173H67C61.1729 173 55.5197 172.255 50.1299 170.857C49.35 171.608 48.38 172.266 47.1807 172.767L13.6611 186.764C7.40767 189.375 0.507305 184.788 0.498047 178.009C0.467899 155.938 0.103314 130.378 0.0175781 107.533C0.00613361 107.024 8.922e-10 106.512 0 106V67C6.44344e-08 29.9969 29.9969 1.27241e-06 67 0H146ZM67 18C39.938 18 18 39.938 18 67V106C18 133.062 39.938 155 67 155H146C173.062 155 195 133.062 195 106V67C195 39.938 173.062 18 146 18H67Z" fill="currentColor"/>
+        <path d="M247.297 152.037C250.549 154.049 254.702 152.819 256.375 149.178C265.156 130.072 269.772 108.982 269.822 87.5529C269.873 66.1238 265.355 45.0086 256.664 25.8537C255.008 22.2038 250.861 20.9507 247.6 22.9444V22.9444C244.338 24.938 243.199 29.4227 244.834 33.084C252.394 50.0138 256.32 68.6282 256.276 87.5153C256.232 106.402 252.218 124.995 244.579 141.882C242.928 145.535 244.045 150.026 247.297 152.037V152.037Z" fill="#152E46"/>
+        <path d="M268.206 168.369C271.182 170.964 275.524 170.425 277.723 167.02C293.153 143.12 301.518 114.5 301.577 85.0696C301.635 55.6391 293.383 26.9795 278.049 3.00556C275.864 -0.410059 271.523 -0.969605 268.537 1.61025V1.61025C265.55 4.19011 265.05 8.93115 267.215 12.3619C280.65 33.6507 287.873 59.0062 287.822 85.0366C287.77 111.067 280.446 136.388 266.927 157.612C264.748 161.032 265.229 165.775 268.206 168.369V168.369Z" fill="#152E46"/>
+        <path d="M81.3747 107.659C79.5859 110.11 80.1102 113.575 82.7372 115.093C90.5692 119.618 99.486 122.017 108.596 122C117.705 121.983 126.613 119.551 134.428 114.997C137.05 113.47 137.561 110.002 135.763 107.558V107.558C133.965 105.115 130.54 104.628 127.876 106.079C121.978 109.291 115.348 111 108.575 111.013C101.803 111.026 95.1658 109.341 89.2565 106.151C86.5867 104.71 83.1636 105.209 81.3747 107.659V107.659Z" fill="#152E46"/>
+      </svg>
+    </div>
+
+    <div class="auth-header">
+      <h1>{{ 'app.welcome' | translate }}</h1>
+      <p>{{ 'app.subtitle' | translate }}</p>
+    </div>
+
+    <div class="auth-tabs">
+      <button
+        [routerLink]="['/auth/signup']"
+        routerLinkActive="active-tab"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        {{ 'auth.signUp' | translate }}
+      </button>
+
+      <button
+        [routerLink]="['/auth/login']"
+        routerLinkActive="active-tab"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        {{ 'auth.logIn' | translate }}
+      </button>
+    </div>
+
+    <router-outlet></router-outlet>
+
+<!--    <div class="auth-form" *ngIf="activeTab === 'signup'">-->
+<!--      &lt;!&ndash; Signup Form &ndash;&gt;-->
+<!--      <label>Email</label>-->
+<!--      <input type="email" placeholder="your@email.com" />-->
+
+<!--      <label>Password</label>-->
+<!--      <input type="password" placeholder="At least 8 characters" />-->
+
+<!--      <button>Create Account</button>-->
+<!--      <div class="divider"><span>OR</span></div>-->
+<!--      <button class="google-btn"><i class="fa-brands fa-google"></i> Continue with Google</button>-->
+<!--&lt;!&ndash;      <p class="toggle-text">Already have an account? <a (click)="showTab('login')">Log in</a></p>&ndash;&gt;-->
+<!--    </div>-->
+
+<!--    <div class="auth-form" *ngIf="activeTab === 'login'">-->
+<!--      &lt;!&ndash; Login Form &ndash;&gt;-->
+<!--      <label>Email</label>-->
+<!--      <input type="email" placeholder="your@email.com" />-->
+
+<!--      <label>Password</label>-->
+<!--      <input type="password" placeholder="Your password" />-->
+
+<!--      <button>Log In</button>-->
+<!--      <div class="divider"><span>OR</span></div>-->
+<!--      <button class="google-btn"><i class="fa-brands fa-google"></i> Continue with Google</button>-->
+<!--&lt;!&ndash;      <p class="toggle-text">Don't have an account? <a (click)="showTab('signup')">Sign up</a></p>&ndash;&gt;-->
+<!--    </div>-->
+  </div>
+</div>
+

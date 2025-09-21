@@ -1,0 +1,51 @@
+<!-- Main content -->
+<main class="main-content">
+  <div class="main-header">
+    <h1>Your Bots</h1>
+    <button class="select-btn">
+      Create Bot
+    </button>
+  </div>
+
+  <div class="bot-list-grid">
+    <section *ngFor="let bot of bots" class="bot-card">
+      <div class="bot-card-header">
+        <div>
+          <h3>{{bot.name}}</h3>
+          <div class="bot-labels">
+            <span *ngFor="let label of bot.labels" class="bot-label" [style.background]="label.color+'20'" [style.color]="label.color">{{ label.text }}</span>
+          </div>
+        </div>
+        <button class="bot-menu-btn" aria-label="Show menu">⋮</button>
+      </div>
+      <p class="bot-description">{{bot.description}}</p>
+      <div class="bot-progress">
+        <div class="bot-progress-bar-bg">
+          <div class="bot-progress-bar-fill" [style.width.%]="bot.progress"></div>
+        </div>
+        <span class="bot-progress-label">{{bot.progress}}%</span>
+      </div>
+      <div class="bot-actions">
+        <button *ngFor="let action of bot.actions"
+                class="bot-action"
+                [style.color]="action.color || '#374151'">
+          <span class="bot-action-icon">{{action.icon}}</span> {{action.text}}
+        </button>
+      </div>
+    </section>
+
+    <!-- New Bot Card -->
+<!--    <section class="bot-card new-bot-card">-->
+<!--      <div class="new-bot-content">-->
+<!--        <div class="new-bot-icon">➕</div>-->
+<!--        <h3>Create New Bot</h3>-->
+<!--        <p>Start building a new AI assistant for your needs.</p>-->
+<!--      </div>-->
+<!--    </section>-->
+  </div>
+</main>
+
+<!-- Mobile floating action -->
+<button class="mobile-fab" aria-label="Create Bot">
+  <span>➕</span>
+</button>

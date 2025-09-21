@@ -1,1 +1,128 @@
 /* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use 'mixings';
+@use 'components';
+@use 'variables' as *;
+@include mat.core();
+$echoknowledge-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+  ),
+  density: (
+    scale: 0,
+  )
+));
+
+:root {
+  @include mat.all-component-themes($echoknowledge-theme);
+  //--primary-color: rgba(124, 58, 237, 1);
+  --primary-color: rgba(75, 164, 249);
+  //--primary-color-light: rgba(124, 58, 237, 0.15);
+  //--primary-color-lighter: rgba(124, 58, 237, 0.05);
+  --primary-color-light: rgba(75, 164, 249, 0.15);
+  --primary-color-lighter: rgba(75, 164, 249, 0.05);
+  //--primary-hover: rgba(109, 40, 217, 1);
+  --primary-hover: rgba(75, 164, 249, 0.8);
+
+  --bg-color: #ffffff;
+  --text-color: #374151;
+  --input-border: #d1d5db;
+  --divider-color: #e5e7eb;
+  --hover-bg-light: #f9fafb;
+
+  --bg-gradient-start: var(--primary-color-light);
+  --bg-gradient-mid: var(--primary-color-lighter);
+  --bg-gradient-end: var(--bg-color);
+}
+
+[data-theme='dark'] {
+  --primary-color: rgba(167, 139, 250, 1);
+  --primary-color-light: rgba(167, 139, 250, 0.15);
+  --primary-color-lighter: rgba(167, 139, 250, 0.05);
+  --primary-hover: rgba(139, 92, 246, 1);
+
+  --bg-color: #1f2937;
+  --text-color: #f3f4f6;
+  --input-border: #4b5563;
+  --divider-color: #374151;
+  --hover-bg-light: #2d3748;
+
+  --bg-gradient-start: var(--primary-color-light);
+  --bg-gradient-mid: var(--primary-color-lighter);
+  --bg-gradient-end: var(--bg-color);
+}
+
+// ================================
+// RESET
+// ================================
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px
+
+  @include mixings.respond(tab-land) {
+    font-size: 56.25%; // 1rem = 9px
+  }
+
+  @include mixings.respond(tab-port) {
+    font-size: 50%; // 1rem = 8px
+  }
+
+  @include mixings.respond(big-desktop) {
+    font-size: 75%; // 1rem = 12px
+  }
+}
+
+body {
+  box-sizing: border-box;
+  background: linear-gradient(
+      to bottom right,
+      var(--bg-gradient-start),
+      var(--bg-gradient-mid),
+      var(--bg-gradient-end)
+  );
+  background-attachment: fixed;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+  height: 100%;
+}
+
+// ================================
+// GLOBAL UI ELEMENTS
+// ================================
+
+html,
+body {
+  height: 100%;
+}
+
+.forgot-password {
+  text-align: right;
+  font-size: $font-sm;
+
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+//rgb(75, 164, 249)
+.auth-logo svg {
+  color: var(--primary-color);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

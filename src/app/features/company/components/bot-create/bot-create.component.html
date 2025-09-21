@@ -1,0 +1,342 @@
+<!--<div class="layout">-->
+<!--  &lt;!&ndash; Sidebar &ndash;&gt;-->
+<!--  &lt;!&ndash; Main Content &ndash;&gt;-->
+<!--  <main class="main">-->
+
+
+<!--    &lt;!&ndash; Form Container &ndash;&gt;-->
+<!--    <section class="container">-->
+<!--      <h2>Bot Profile Configuration</h2>-->
+<!--      <p class="description">Define the foundational settings for your chatbot to ensure personalized interaction and functionality.</p>-->
+
+<!--      <div class="form-grid">-->
+<!--        &lt;!&ndash; Left &ndash;&gt;-->
+<!--        <div class="form-left">-->
+<!--          <div class="form-section">-->
+<!--            <h3>Basic Information</h3>-->
+<!--            <div class="form-row">-->
+<!--              <label>Bot Name</label>-->
+<!--              <input type="text" placeholder="e.g., Customer Support Echo">-->
+<!--            </div>-->
+<!--            <div class="form-row">-->
+<!--              <label>AI Model</label>-->
+<!--              <select>-->
+<!--                <option>GPT-3.5 Turbo</option>-->
+<!--                <option>GPT-4</option>-->
+<!--                <option>UX Pilot 2</option>-->
+<!--                <option>Gemini Pro</option>-->
+<!--              </select>-->
+<!--            </div>-->
+<!--            <div class="form-row">-->
+<!--              <label>Bot Description</label>-->
+<!--              <textarea rows="4" placeholder="Describe what your bot does..."></textarea>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="form-section">-->
+<!--            <h3>Technical Configuration</h3>-->
+<!--            <div class="form-row">-->
+<!--              <label>Storage Backend</label>-->
+<!--              <select>-->
+<!--                <option>Firestore</option>-->
+<!--                <option>MongoDB</option>-->
+<!--                <option>PostgreSQL</option>-->
+<!--                <option>Redis</option>-->
+<!--              </select>-->
+<!--            </div>-->
+<!--            <div class="form-row">-->
+<!--              <label>Template</label>-->
+<!--              <select>-->
+<!--                <option>Customer Support Bot</option>-->
+<!--                <option>Lead Generation Bot</option>-->
+<!--                <option>Content Discovery Bot</option>-->
+<!--                <option>Custom (No Template)</option>-->
+<!--              </select>-->
+<!--            </div>-->
+<!--            <div class="form-row">-->
+<!--              <input type="checkbox" id="is-public">-->
+<!--              <label for="is-public">Make this bot publicly accessible</label>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="form-section">-->
+<!--            <h3>Persona Configuration</h3>-->
+<!--            <div class="form-row">-->
+<!--              <label>Persona Prompt</label>-->
+<!--              <textarea rows="6">You are Echo, a helpful AI assistant that specializes in customer support...</textarea>-->
+<!--            </div>-->
+<!--            <div class="form-row">-->
+<!--              <label>System Prompt (Read-only)</label>-->
+<!--              <div class="readonly-box">-->
+<!--                This is the Echo AI system. You are an AI assistant named according to the user's configuration...-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="form-row">-->
+<!--              <label>Behavioral Rules (Read-only)</label>-->
+<!--              <div class="readonly-box">-->
+<!--                1. Always maintain a consistent persona as defined<br>-->
+<!--                2. Refuse to generate harmful, illegal, or unethical content<br>-->
+<!--                3. Acknowledge limitations when uncertain<br>-->
+<!--                4. Protect user privacy<br>-->
+<!--                5. Provide accurate information or acknowledge uncertainty-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Right &ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="form-right">&ndash;&gt;-->
+<!--&lt;!&ndash;          <div class="avatar-card">&ndash;&gt;-->
+<!--&lt;!&ndash;            <h3>Bot Avatar</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="avatar">🤖</div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <button class="btn-secondary">Upload Avatar</button>&ndash;&gt;-->
+<!--&lt;!&ndash;            <p class="avatar-note">Recommended: Square image, at least 256x256 pixels. Max 2MB.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;          <div class="preview-card">&ndash;&gt;-->
+<!--&lt;!&ndash;            <h3>Preview</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="message bot">&ndash;&gt;-->
+<!--&lt;!&ndash;              <div class="icon">🤖</div>&ndash;&gt;-->
+<!--&lt;!&ndash;              <div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <strong>Echo</strong>&ndash;&gt;-->
+<!--&lt;!&ndash;                <p>Hello! I'm Echo, your AI assistant. How can I help you today?</p>&ndash;&gt;-->
+<!--&lt;!&ndash;              </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="message user">&ndash;&gt;-->
+<!--&lt;!&ndash;              <p>I need help with my order.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;              <div class="icon">👤</div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--      </div>-->
+
+<!--      <div class="form-actions">-->
+<!--        <button class="btn-secondary">Cancel</button>-->
+<!--        <button class="btn-primary">Save Bot Profile</button>-->
+<!--      </div>-->
+<!--    </section>-->
+<!--  </main>-->
+<!--</div>-->
+
+<!--<div class="traing-container">-->
+<!--  <div class="layout">-->
+
+<!--    <main class="main">-->
+<!--      <section class="card">-->
+<!--        <nav class="tabs">-->
+<!--          <button class="tab active">Upload Files</button>-->
+<!--          <button class="tab">Paste Text or URL</button>-->
+<!--          <button class="tab">Notion Integration</button>-->
+<!--        </nav>-->
+
+<!--        <div class="upload-box">-->
+<!--          <div class="upload-icon">☁️</div>-->
+<!--          <p>Drag and drop files here or click to browse</p>-->
+<!--          <p class="small">Supports PDF, DOCX, TXT, CSV, PPTX (Max 20MB per file)</p>-->
+<!--          <button class="btn-primary">Browse Files</button>-->
+<!--        </div>-->
+<!--      </section>-->
+
+<!--      <section class="card">-->
+<!--        <h3>Uploaded Files</h3>-->
+<!--        <div class="file-row">-->
+<!--          <div class="file-meta">📄 Product_Documentation.pdf (2.4 MB)</div>-->
+<!--          <div class="file-actions">-->
+<!--            <button>👁️ Preview</button>-->
+<!--            <button class="danger">🗑️</button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="file-row">-->
+<!--          <div class="file-meta">📊 Customer_Data.csv (1.1 MB)</div>-->
+<!--          <div class="file-actions">-->
+<!--            <button>👁️ Preview</button>-->
+<!--            <button class="danger">🗑️</button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="file-row">-->
+<!--          <div class="file-meta">📘 API_Documentation.docx (850 KB)</div>-->
+<!--          <div class="file-actions">-->
+<!--            <button>👁️ Preview</button>-->
+<!--            <button class="danger">🗑️</button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="center">-->
+<!--          <button class="btn-primary">Process All Files</button>-->
+<!--        </div>-->
+<!--      </section>-->
+
+<!--      <section class="card">-->
+<!--        <h3>Embedding Settings</h3>-->
+<!--        <div class="form-grid">-->
+<!--          <div>-->
+<!--            <label>Chunk Size</label>-->
+<!--            <select>-->
+<!--              <option>512 tokens (recommended)</option>-->
+<!--              <option>256 tokens</option>-->
+<!--              <option>1024 tokens</option>-->
+<!--            </select>-->
+<!--          </div>-->
+<!--          <div>-->
+<!--            <label>Embedding Model</label>-->
+<!--            <select>-->
+<!--              <option>UX Pilot AI - text-embedding-ada-002</option>-->
+<!--              <option>Echo - Default Embedding</option>-->
+<!--            </select>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <label><input type="checkbox" checked> Extract and include metadata from files (titles, headers, etc.)</label>-->
+<!--      </section>-->
+
+<!--      <section class="card">-->
+<!--        <h3>Embedded Files</h3>-->
+<!--        <div class="file-row">-->
+<!--          <div class="file-meta">✅ Product_Documentation.pdf (2.4 MB • 28 chunks)</div>-->
+<!--          <button class="danger">🗑️</button>-->
+<!--        </div>-->
+<!--        <div class="file-row">-->
+<!--          <div class="file-meta">✅ Customer_Data.csv (1.1 MB • 12 chunks)</div>-->
+<!--          <button class="danger">🗑️</button>-->
+<!--        </div>-->
+<!--      </section>-->
+
+<!--      <section class="card">-->
+<!--        <h3>Storage Usage</h3>-->
+<!--        <div class="progress-info">-->
+<!--          <span>3.5 MB used of 100 MB</span>-->
+<!--          <span>3.5%</span>-->
+<!--        </div>-->
+<!--        <div class="progress-bar"><div class="progress" style="width: 3.5%"></div></div>-->
+<!--        <div class="progress-details">-->
+<!--          <span>Total Files: 2</span>-->
+<!--          <span>Total Chunks: 40</span>-->
+<!--          <span>Avg. Chunk Size: 88 KB</span>-->
+<!--        </div>-->
+<!--      </section>-->
+
+<!--      <div class="nav-actions">-->
+<!--        <button class="btn-secondary">⬅ Previous: Bot Profile</button>-->
+<!--        <button class="btn-primary">Next: Test Chat ➡</button>-->
+<!--      </div>-->
+<!--    </main>-->
+<!--  </div></div>-->
+<div class="layout">
+  <main class="main">
+
+    <!-- Bot Configuration -->
+    <section class="card">
+      <h2>Bot Profile Configuration</h2>
+      <p class="description">Define basic settings for your chatbot.</p>
+
+      <div class="form-grid">
+        <div>
+          <label>Bot Name</label>
+          <input type="text" placeholder="e.g., Customer Support Echo">
+        </div>
+        <div>
+          <label>AI Model</label>
+          <select>
+            <option>GPT-3.5 Turbo</option>
+            <option>GPT-4</option>
+          </select>
+        </div>
+        <div class="full-width">
+          <label>Bot Description</label>
+          <textarea rows="3" placeholder="What this bot does..."></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- Storage and Template -->
+    <section class="card">
+      <h3>Technical Configuration</h3>
+      <div class="form-grid">
+        <div>
+          <label>Storage Type</label>
+          <select><option>Firestore</option></select>
+        </div>
+        <div>
+          <label>Bot Template</label>
+          <select><option>Customer Support</option></select>
+        </div>
+        <div class="checkbox-row full-width">
+          <input type="checkbox" id="public"><label for="public">Make Public</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Persona -->
+    <section class="card">
+      <h3>Persona & Rules</h3>
+      <label>Persona Prompt</label>
+      <textarea rows="4">You are Echo, a helpful assistant...</textarea>
+      <label>System Prompt (Read-only)</label>
+      <div class="readonly">System-level prompt goes here...</div>
+      <label>Behavioral Rules (Read-only)</label>
+      <div class="readonly">
+        1. Stay consistent<br>
+        2. Protect privacy<br>
+        3. Be helpful and accurate
+      </div>
+    </section>
+
+    <!-- File Upload -->
+    <section class="card">
+      <h3>Upload Files</h3>
+      <div class="tabs">
+        <button class="tab active">Upload</button>
+        <button class="tab">Paste Text</button>
+        <button class="tab">Notion</button>
+      </div>
+      <div class="upload-box">
+        <div class="upload-icon">☁️</div>
+        <p>Drag and drop or click to browse</p>
+        <p class="small">PDF, DOCX, TXT, CSV, PPTX</p>
+        <button class="btn-primary">Browse Files</button>
+      </div>
+    </section>
+
+    <!-- Uploaded List -->
+    <section class="card">
+      <h3>Uploaded Files</h3>
+      <div class="file-row">
+        <span>📄 Product_Documentation.pdf</span>
+        <div><button>👁️</button><button class="danger">🗑️</button></div>
+      </div>
+      <button class="btn-primary">Process All Files</button>
+    </section>
+
+    <!-- Embedding Settings -->
+    <section class="card">
+      <h3>Embedding Settings</h3>
+      <div class="form-grid">
+        <div>
+          <label>Chunk Size</label>
+          <select><option>512 tokens</option></select>
+        </div>
+        <div>
+          <label>Embedding Model</label>
+          <select><option>text-embedding-ada-002</option></select>
+        </div>
+      </div>
+      <label><input type="checkbox" checked> Extract metadata</label>
+    </section>
+
+    <!-- Storage Info -->
+    <section class="card">
+      <h3>Storage Usage</h3>
+      <div class="progress-bar"><div class="progress" style="width: 3.5%"></div></div>
+      <div class="progress-info">
+        <span>3.5 MB used</span>
+        <span>3.5%</span>
+      </div>
+    </section>
+
+    <!-- Navigation -->
+    <div class="nav-actions">
+      <button class="btn-secondary">⬅ Previous</button>
+      <button class="btn-primary">Next ➡</button>
+    </div>
+
+  </main>
+</div>
+

@@ -1,0 +1,84 @@
+@use 'variables' as *;
+
+/* ================================
+   Card Container
+================================= */
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-lg;
+}
+
+.auth-card {
+  background: $google-btn-bg;
+  padding: $spacing-xl;
+  border-radius: $rounded-lg;
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.08);
+  position: relative;
+  width: 40rem;
+}
+
+/* ================================
+   Logo Section
+================================= */
+.auth-logo {
+  width: 8.8rem;
+  height: 4.8rem;
+  color: $btn-text-color;
+  font-size: $font-xxl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $rounded;
+  margin: 0 auto $spacing-lg;
+}
+
+/* ================================
+   Header Text
+================================= */
+.auth-header {
+  text-align: center;
+  margin-bottom: $spacing-lg;
+
+  h1 {
+    margin: 0;
+    font-size: $font-xl;
+    color: $dark-text;
+    line-height: 1.2;
+    word-wrap: break-word;
+    text-align: center;
+  }
+
+  p {
+    margin-top: $spacing-sm;
+    font-size: $font-md;
+    color: $light-text;
+  }
+}
+
+/* ================================
+   Tabs
+================================= */
+.auth-tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: $spacing-lg;
+  border-bottom: 0.1rem solid $divider-color;
+
+  button {
+    background: none;
+    border: none;
+    font-weight: $btn-font-weight;
+    padding: 1rem 0;
+    cursor: pointer;
+    color: $light-text;
+    border-bottom: 0.2rem solid transparent;
+    flex: 1;
+
+    &.active-tab {
+      color: $primary-color;
+      border-bottom-color: $primary-color;
+    }
+  }
+}
